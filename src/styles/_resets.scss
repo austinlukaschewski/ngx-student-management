@@ -1,0 +1,22 @@
+@mixin resets() {
+    :root {
+        --layout-padding: 2.5rem;
+        @media screen and (min-width: 775px) and (max-width: 899.98px) {
+            --layout-padding: 1.75rem;
+        }
+        @media screen and (max-width: 774.98px) {
+            --layout-padding: 1rem;
+        }
+    }
+
+    .ng-progress-bar {
+        .ng-bar {
+            background: var(--aulu-primary) !important;
+        }
+    }
+
+    // To remove conflict between Angular Material & Tailwind for mat-form-field
+    .mdc-notched-outline__notch {
+        border-right: none;
+    }
+}

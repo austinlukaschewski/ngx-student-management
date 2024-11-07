@@ -1,0 +1,62 @@
+// Grays
+$gray-1000: oklch(16.93% 0.004 285.95); // #0f0f11
+$gray-900: oklch(19.37% 0.006 300.98); // #151417
+$gray-800: oklch(25.16% 0.008 308.11); // #232125
+$gray-700: oklch(36.98% 0.014 302.71); // #413e46
+$gray-600: oklch(44% 0.019 306.08); // #55505b
+$gray-500: oklch(54.84% 0.023 304.99); // #746e7c
+$gray-400: oklch(70.9% 0.015 304.04); // #a39fa9
+$gray-300: oklch(84.01% 0.009 308.34); // #ccc9cf
+$gray-200: oklch(91.75% 0.004 301.42); // #e4e3e6
+$gray-100: oklch(97.12% 0.002 325.59); // #f6f5f6
+$gray-50: oklch(98.81% 0 0); // #fbfbfb
+
+$link--active-background: color-mix(in srgb, var(--aulu-primary) 25%, transparent);
+
+@mixin root-tokens() {
+    --gray-1000: #{$gray-1000};
+    --gray-900: #{$gray-900};
+    --gray-800: #{$gray-800};
+    --gray-700: #{$gray-700};
+    --gray-600: #{$gray-600};
+    --gray-500: #{$gray-500};
+    --gray-400: #{$gray-400};
+    --gray-300: #{$gray-300};
+    --gray-200: #{$gray-200};
+    --gray-100: #{$gray-100};
+    --gray-50: #{$gray-50};
+
+    --aulu-link--active-background: #{$link--active-background};
+}
+
+@mixin light-tokens() {
+    --full-contrast: black;
+    --primary-contrast: var(--gray-900);
+    --secondary-contrast: var(--gray-800);
+    --tertiary-contrast: var(--gray-700);
+    --quaternary-contrast: var(--gray-500);
+    --quinary-contrast: var(--gray-300);
+    --senary-contrast: var(--gray-200);
+    --septenary-contrast: var(--gray-300);
+    --octonary-contrast: var(--gray-50);
+    --page-background: var(--gray-100);
+    --gray-unfilled: var(--gray-400);
+    --webgl-page-background: #ffffff;
+    --webgl-gray-unfilled: #a39fa9;
+}
+
+@mixin dark-tokens() {
+    --full-contrast: white;
+    --primary-contrast: var(--gray-50);
+    --secondary-contrast: var(--gray-300);
+    --tertiary-contrast: var(--gray-300);
+    --quaternary-contrast: var(--gray-400);
+    --quinary-contrast: var(--gray-500);
+    --senary-contrast: var(--gray-700);
+    --septenary-contrast: var(--gray-700);
+    --octonary-contrast: var(--gray-900);
+    --page-background: var(--gray-1000);
+    --gray-unfilled: var(--gray-700);
+    --webgl-page-background: #0f0f11;
+    --webgl-gray-unfilled: #413e46;
+}

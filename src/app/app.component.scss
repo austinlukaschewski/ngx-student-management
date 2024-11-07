@@ -1,0 +1,12 @@
+:host {
+    @apply flex h-full flex-col;
+}
+
+main {
+    @apply flex-1;
+    padding: var(--layout-padding);
+}
+
+footer {
+    margin-top: auto;
+}

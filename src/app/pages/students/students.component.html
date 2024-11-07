@@ -1,0 +1,22 @@
+<div class="flex justify-center sm:justify-end">
+    <button mat-flat-button type="button" (click)="onRegisterNewStudent()">Register new student</button>
+</div>
+<mat-card>
+    <mat-card-header class="mb-4">
+        <mat-card-title>Students</mat-card-title>
+        @if (service.studentCount$ | async; as count) {
+            <mat-card-subtitle>Total students: {{ count }}</mat-card-subtitle>
+        }
+    </mat-card-header>
+    <mat-card-content>
+        @if ((service.students$ | async).length > 0) {
+            <app-students-table
+                [data]="service.students$ | async"
+                (updateStudent)="onUpdateStudent($event)"
+                (deleteStudent)="onDeleteStudent($event)"
+            />
+        } @else {
+            <div class="data-not-found">No students found</div>
+        }
+    </mat-card-content>
+</mat-card>

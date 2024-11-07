@@ -1,0 +1,17 @@
+<mat-toolbar class="mat-elevation-z1">
+    <button mat-icon-button class="mr-4 block sm:hidden" (click)="openSidenav.emit()">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <a routerLink="/">Student Management</a>
+
+    <nav class="ml-8 hidden space-x-4 sm:flex">
+        @for (link of links(); track link.routerLink) {
+            <a mat-button routerLinkActive="link--active" [routerLink]="link.routerLink">
+                @if (link.icon) {
+                    <mat-icon>{{ link.icon }}</mat-icon>
+                }
+                {{ link.label }}
+            </a>
+        }
+    </nav>
+</mat-toolbar>

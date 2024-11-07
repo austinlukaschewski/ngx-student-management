@@ -1,0 +1,17 @@
+@let data = registration().course;
+
+<mat-card class="min-w-[325px]">
+    <mat-card-header>
+        <mat-card-title>{{ data.name }}</mat-card-title>
+        <mat-card-subtitle>{{ data | courseIdentifier }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-actions class="flex space-x-4">
+        <button mat-flat-button type="button" (click)="emitUnregisterStudent(registration())">Unregister</button>
+        <button mat-button type="button" [routerLink]="['/courses', data.id]">View</button>
+    </mat-card-actions>
+
+    <mat-card-footer class="p-1 text-center">
+        <span>Registed on {{ data.createdAt | date: 'mediumDate' }}</span>
+    </mat-card-footer>
+</mat-card>

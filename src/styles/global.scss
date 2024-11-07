@@ -1,0 +1,37 @@
+@use 'resets';
+
+@import '@angular/cdk/overlay-prebuilt.css';
+@import 'tailwind';
+@import 'm3-theme';
+@import 'mat/index';
+
+@include resets.resets();
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    // background-color: var(--golfr-background);
+    // color: var(--golfr-on-background);
+    // transition:
+    //     color 0.3s ease,
+    //     background-color 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', 'Inter Tight', sans-serif;
+    font-size: 16px;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.data-not-found {
+    @apply p-4 text-center text-lg text-gray-500;
+}
+
+.table-container {
+    @apply w-full overflow-auto;
+}

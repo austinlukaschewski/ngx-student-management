@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>{{ type }} Course</h2>
+<form [formGroup]="form">
+    <mat-dialog-content class="flex flex-col space-y-4">
+        <mat-form-field>
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="category">
+                <mat-option selected>--</mat-option>
+                @for (category of courseCategories; track category.value) {
+                    <mat-option [value]="category.value">{{ category.label }}</mat-option>
+                }
+            </mat-select>
+            @if (getError('category'); as error) {
+                <mat-error>{{ error }}</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Identifier</mat-label>
+            <input matInput type="number" formControlName="categoryIdentifier" />
+            @if (getError('categoryIdentifier'); as error) {
+                <mat-error>{{ error }}</mat-error>
+            }
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="name" />
+            @if (getError('name'); as error) {
+                <mat-error>{{ error }}</mat-error>
+            }
+        </mat-form-field>
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button mat-button matDialogClose>Cancel</button>
+        <button mat-button [disabled]="form.invalid" (click)="onSubmit()">{{ type }}</button>
+    </mat-dialog-actions>
+</form>
