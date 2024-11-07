@@ -1,4 +1,4 @@
-# Student Management app for Leidos interview By Austin Lukaschewski
+# Student Management app By Austin Lukaschewski
 
 ## Getting started
 - Install dependencies running `pnpm i` in the command prompt
@@ -11,3 +11,4 @@
 - src/app is where the main app is. Components folder with a few layout components and a pages folder where my pages components live.
 - src/types is where my typings are.
 - src/styles is all of the styling files. I used a generic Angular Material theme that I setup using the custom option in the schematic.
+- I use prettier, eslint, eslint-plugin-simple-import-sort, and prettier-plugin-tailwindcss to format most of my code to make things look nice.
